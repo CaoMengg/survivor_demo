@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047c4c757bb8b4742ac7081d72fa7db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  rb: {fileID: -2433031704433044480}
+  speed: 1
   health: 10
-  faceDirect: {x: 0, y: 0}

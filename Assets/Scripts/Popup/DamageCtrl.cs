@@ -6,9 +6,9 @@ namespace Popup
     {
         public static DamageCtrl Instance { get; private set; }
         public float duration = 1;
-        public Damage damage;
         public AnimationCurve scaleCurve;
-        public GameObject damagePool;
+        public Damage damagePrefab;
+        public Transform damagePool;
 
         void Awake()
         {
@@ -16,15 +16,15 @@ namespace Popup
             {
                 Instance = this;
             }
-            else if (Instance != this)
+            else
             {
                 Destroy(gameObject);
             }
         }
 
-        public void Show(float text, Vector2 position)
+        public void Show(float damage, Vector2 position)
         {
-            Instantiate(damage, damagePool.transform).Init(text, position);
+            Instantiate(damagePrefab, damagePool).Init(damage, position);
         }
     }
 }

@@ -1,31 +1,17 @@
-using DG.Tweening;
 using UnityEngine;
 
 namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {
-        private Rigidbody2D rb;
+        public Rigidbody2D rb;
         public float speed;
         public float health;
-        public Vector2 faceDirect;
-
-        void Start()
-        {
-            rb = GetComponent<Rigidbody2D>();
-        }
 
         void Update()
         {
-            transform.DOMove(Player.Instance.transform.position, speed).SetSpeedBased();
-
-            faceDirect = (Player.Instance.transform.position - transform.position).normalized;
-            transform.up = faceDirect;
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.KillAll();
+            transform.position = Vector2.MoveTowards(transform.position, Player.Instance.transform.position, speed * Time.deltaTime);
+            transform.up = (Player.Instance.transform.position - transform.position).normalized;
         }
 
         public void TakeDamage(float damage, Vector2 direct)

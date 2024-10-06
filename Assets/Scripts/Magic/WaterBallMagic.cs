@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 namespace Magic
@@ -7,15 +6,9 @@ namespace Magic
     {
         protected override void OnStart()
         {
-            transform.up = Random.insideUnitCircle.normalized;
-            transform.position += transform.up * 3;
-        }
-
-        protected override void OnUpdate()
-        {
-            transform.up = Quaternion.AngleAxis(2, Vector3.forward) * transform.up;
-            transform.up.Normalize();
-            transform.DOMove(Player.Instance.transform.position + transform.up * 3, data.speed).SetSpeedBased();
+            transform.SetParent(Player.Instance.body);
+            transform.position = (Vector2)Player.Instance.body.position + Random.insideUnitCircle.normalized * 3;
+            transform.up = Vector2.zero;
         }
     }
 }

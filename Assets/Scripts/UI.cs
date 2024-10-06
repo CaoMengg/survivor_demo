@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
         {
             Instance = this;
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
         }

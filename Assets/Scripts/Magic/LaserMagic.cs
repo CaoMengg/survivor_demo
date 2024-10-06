@@ -8,11 +8,7 @@ namespace Magic
         protected override void OnStart()
         {
             transform.position += transform.up * Random.Range(0, 1);
-        }
-
-        protected override void OnUpdate()
-        {
-            transform.DOMove(transform.position + transform.up, data.speed).SetSpeedBased();
+            transform.DOMove(transform.position + data.speed * duration * transform.up, duration);
         }
     }
 }

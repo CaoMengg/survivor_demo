@@ -1,17 +1,19 @@
-using System.Linq;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    private float speed = 3;
-    private float range = 100;
+    private readonly float speed = 5;
+    private readonly float range = 10;
     private bool isMove = false;
     private Vector2 inputDirect = Vector2.zero;
     public Vector2 faceDirect = Vector2.up;
+
+    private readonly Collider2D[] enemyResults = new Collider2D[10];
     private GameObject target;
+    public Transform body;
 
     void Awake()
     {
@@ -19,25 +21,35 @@ public class Player : MonoBehaviour
         {
             Instance = this;
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        body.DORotate(new Vector3(0, 0, 360), 1.5f, RotateMode.FastBeyond360)
+        .SetLoops(-1).SetEase(Ease.Linear).SetRelative();
     }
 
     void Update()
     {
         if (isMove)
         {
-            transform.DOMove((Vector2)transform.position + inputDirect, speed).SetSpeedBased();
+            Vector2 targetPosition = (Vector2)transform.position + inputDirect;
+            transform.position = Vector2.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
         }
 
-        GetTarget();
+        if (target == null)
+        {
+            GetTarget();
+        }
         if (target != null)
         {
             faceDirect = (target.transform.position - transform.position).normalized;
+            transform.up = faceDirect;
         }
-        transform.up = faceDirect;
     }
 
     void OnMove(InputValue input)
@@ -56,23 +68,16 @@ public class Player : MonoBehaviour
 
     void GetTarget()
     {
-        target = null;
-        var results = GameObject.FindGameObjectsWithTag("Enemy");
-        if (results.Count() == 0)
+        float minDistance = float.MaxValue;
+        int numFound = Physics2D.OverlapCircleNonAlloc(transform.position, range, enemyResults, LayerMask.GetMask("Enemy"));
+        for (int i = 0; i < numFound; i++)
         {
-            return;
-        }
-
-        var minDistance = float.MaxValue;
-        foreach (var result in results)
-        {
-            var distance = (result.transform.position - transform.position).sqrMagnitude;
-            if (distance > minDistance || distance > range)
+            float distance = (enemyResults[i].transform.position - transform.position).sqrMagnitude;
+            if (distance < minDistance)
             {
-                continue;
+                minDistance = distance;
+                target = enemyResults[i].gameObject;
             }
-            minDistance = distance;
-            target = result;
         }
     }
 }

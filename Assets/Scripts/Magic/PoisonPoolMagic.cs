@@ -4,7 +4,8 @@ namespace Magic
 {
     public class PoisonPoolMagic : Magic
     {
-        private float damageCoolDown = 0;
+        private readonly float damageCoolDown = 0.3f;
+        private float curDamageCoolDown = 0;
 
         protected override void OnStart()
         {
@@ -13,13 +14,13 @@ namespace Magic
 
         protected override void OnUpdate()
         {
-            if (damageCoolDown > 0)
+            if (curDamageCoolDown > 0)
             {
-                damageCoolDown -= Time.deltaTime;
+                curDamageCoolDown -= Time.deltaTime;
             }
             else
             {
-                damageCoolDown = 0.3f;
+                curDamageCoolDown = damageCoolDown;
             }
         }
 
@@ -29,16 +30,15 @@ namespace Magic
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            if (damageCoolDown > 0)
+            if (curDamageCoolDown > 0)
             {
                 return;
             }
 
-            if (!other.gameObject.TryGetComponent(out Enemy.Enemy enemy))
+            if (other.gameObject.TryGetComponent(out Enemy.Enemy enemy))
             {
-                return;
+                enemy.TakeDamage(data.damage, Vector2.zero);
             }
-            enemy.TakeDamage(data.damage, Vector2.zero);
         }
     }
 }

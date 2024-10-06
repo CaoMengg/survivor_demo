@@ -9,7 +9,7 @@ namespace Enemy
         public float coolDown = 0.5f;
         private float curCoolDown;
         public int spawnNum = 4;
-        public GameObject enemyPool;
+        public Transform enemyPool;
 
         void Awake()
         {
@@ -17,7 +17,7 @@ namespace Enemy
             {
                 Instance = this;
             }
-            else if (Instance != this)
+            else
             {
                 Destroy(gameObject);
             }
@@ -34,11 +34,10 @@ namespace Enemy
 
             for (int i = 0; i < spawnNum; i++)
             {
-                var direct = Random.insideUnitCircle;
-                direct += direct.normalized;
-                direct *= 8;
+                var direct = Random.insideUnitCircle * 8;
+                direct += direct.normalized * 5;
                 var index = Random.Range(0, enemyList.enemyList.Count);
-                var obj = Instantiate(enemyList.enemyList[index].enemy, enemyPool.transform);
+                var obj = Instantiate(enemyList.enemyList[index].enemy, enemyPool);
                 obj.transform.position = (Vector2)Player.Instance.transform.position + direct;
             }
         }

@@ -1,6 +1,6 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 using Magic;
 
 namespace Card
@@ -14,7 +14,6 @@ namespace Card
         private readonly int maxDrawnNum = 4;
         private readonly GameObject[] curCardList = new GameObject[4];
         private readonly GameObject[] nextCardList = new GameObject[4];
-        private float nextDelay;
         public Slider cardSlider;
 
         void Awake()
@@ -23,30 +22,9 @@ namespace Card
             {
                 Instance = this;
             }
-            else if (Instance != this)
+            else
             {
                 Destroy(gameObject);
-            }
-        }
-
-        void Update()
-        {
-            nextDelay -= Time.deltaTime;
-            for (int i = 0; i < maxDrawnNum; i++)
-            {
-                if (curCardList[i] != null)
-                {
-                    curCardList[i].transform.DOMove(curStanceList[i].transform.position, 3);
-                }
-
-                if (nextDelay > 0)
-                {
-                    continue;
-                }
-                if (nextCardList[i] != null)
-                {
-                    nextCardList[i].transform.DOMove(nextStanceList[i].transform.position, 1);
-                }
             }
         }
 
@@ -55,16 +33,13 @@ namespace Card
             for (int i = 0; i < maxDrawnNum; i++)
             {
                 curStanceList[i].SetActive(false);
-
-                if (curCardList[i] != null)
-                {
-                    Destroy(curCardList[i]);
-                }
+                Destroy(curCardList[i]);
 
                 curCardList[i] = nextCardList[i];
                 if (curCardList[i] != null)
                 {
                     curStanceList[i].SetActive(true);
+                    curCardList[i].transform.DOMove(curStanceList[i].transform.position, 3);
                 }
 
                 if (i < MagicCtrl.Instance.nextMagicList.Count)
@@ -72,11 +47,15 @@ namespace Card
                     var magic = MagicCtrl.Instance.nextMagicList[i];
                     var card = Instantiate(magicCard, transform);
                     card.GetComponent<MagicCard>().Init(nextStanceList[0].transform.position, magic);
+                    card.transform.DOMove(nextStanceList[i].transform.position, 1).SetDelay(1);
                     nextCardList[i] = card;
                 }
-            }
+                else
+                {
+                    nextCardList[i] = null;
 
-            nextDelay = 1;
+                }
+            }
         }
 
         public void UpdateCardSlider(float maxValue, float curValue)

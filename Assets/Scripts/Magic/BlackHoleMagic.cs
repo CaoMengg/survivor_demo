@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using DG.Tweening;
 
@@ -8,22 +7,17 @@ namespace Magic
     {
         private readonly float pullDuration = 1;
 
-        protected override void OnUpdate()
+        protected override void OnStart()
         {
-            if (duration > pullDuration)
+            var enemys = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemys.Length == 0)
             {
                 return;
             }
 
-            var results = GameObject.FindGameObjectsWithTag("Enemy");
-            if (results.Count() == 0)
+            foreach (var enemy in enemys)
             {
-                return;
-            }
-
-            foreach (var result in results)
-            {
-                result.transform.DOMove(transform.position, pullDuration);
+                enemy.transform.DOMove(transform.position, pullDuration).SetDelay(pullDuration);
             }
         }
 

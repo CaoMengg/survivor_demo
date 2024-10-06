@@ -1,19 +1,16 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 namespace Popup
 {
     public class Damage : MonoBehaviour
     {
         private float duration = 0;
-        private float percent;
-        private float scale;
-        private TextMeshPro textMeshPro;
+        public TextMeshPro textMeshPro;
 
         public void Init(float damage, Vector2 position)
         {
             transform.position = position;
-            textMeshPro = GetComponent<TextMeshPro>();
             textMeshPro.SetText(damage.ToString());
         }
 
@@ -25,8 +22,8 @@ namespace Popup
                 Destroy(gameObject);
                 return;
             }
-            percent = duration / DamageCtrl.Instance.duration;
-            scale = DamageCtrl.Instance.scaleCurve.Evaluate(percent);
+            float percent = duration / DamageCtrl.Instance.duration;
+            float scale = DamageCtrl.Instance.scaleCurve.Evaluate(percent);
             transform.localScale = Vector2.one * scale;
         }
     }

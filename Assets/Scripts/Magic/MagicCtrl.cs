@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using Card;
 using UnityEngine;
+using Card;
 
 namespace Magic
 {
@@ -9,11 +9,11 @@ namespace Magic
     {
         public static MagicCtrl Instance { get; private set; }
         public MagicList magicList;
-        private Dictionary<int, MagicData> magicMap = new() { };
+        private Dictionary<int, MagicData> magicMap;
         public float drawnCD = 10;
         private float curDrawnCD = 0;
         public int drawnNum = 3;
-        private List<MagicData> magicPool = new() { };
+        private List<MagicData> magicPool;
         private List<MagicData> curMagicList;
         public List<MagicData> nextMagicList;
         public GameObject bulletPool;
@@ -24,7 +24,7 @@ namespace Magic
             {
                 Instance = this;
             }
-            else if (Instance != this)
+            else
             {
                 Destroy(gameObject);
             }
@@ -32,20 +32,17 @@ namespace Magic
 
         void Start()
         {
-            foreach (var magic in magicList.magicList)
-            {
-                magicMap[magic.magicId] = magic;
-                magicPool.Add(magic);
-            }
+            magicMap = magicList.magicList.ToDictionary(m => m.magicId, m => m);
+            magicPool = new List<MagicData>(magicList.magicList);
             DrawnMagic();
         }
 
         void DrawnMagic()
         {
             curMagicList = nextMagicList;
-            nextMagicList = magicPool.OrderBy(x => Random.value).ToList().GetRange(0, drawnNum);
+            nextMagicList = magicPool.OrderBy(_ => Random.value).Take(drawnNum).ToList();
 
-            curMagicList.ForEach(item => { item.curCoolDown = 0; });
+            curMagicList.ForEach(item => item.curCoolDown = 0);
             CardCtrl.Instance.DrawnCard();
         }
 
