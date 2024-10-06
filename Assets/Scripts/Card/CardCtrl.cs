@@ -53,7 +53,6 @@ namespace Card
                 else
                 {
                     nextCardList[i] = null;
-
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace Magic
 
             foreach (var enemy in enemys)
             {
-                enemy.transform.DOMove(transform.position, pullDuration).SetDelay(pullDuration);
+                enemy.transform.DOMove(transform.position, pullDuration).SetDelay(pullDuration).SetLink(enemy);
             }
         }
 

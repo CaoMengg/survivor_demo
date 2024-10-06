@@ -37,7 +37,7 @@ namespace Magic
 
         private void OnDestroy()
         {
-            //DOTween.Kill(this);
+            DOTween.Kill(transform);
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
