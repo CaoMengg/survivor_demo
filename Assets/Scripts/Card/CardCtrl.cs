@@ -32,7 +32,7 @@ namespace Card
         {
             for (int i = 0; i < maxDrawnNum; i++)
             {
-                curStanceList[i].SetActive(false);
+                // curStanceList[i].SetActive(false);
                 Destroy(curCardList[i]);
 
                 curCardList[i] = nextCardList[i];
