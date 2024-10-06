@@ -15,10 +15,10 @@ MonoBehaviour:
   magicId: 2
   magicName: Water Ball
   coolDown: 4
-  curCoolDown: 2.0229044
+  curCoolDown: 2.0089421
   duration: 4
   castNum: 3
-  speed: 4
+  speed: 0
   damage: 2
   penetrate: 1000
   icon: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}

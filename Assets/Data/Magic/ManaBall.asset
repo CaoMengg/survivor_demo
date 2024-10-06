@@ -15,10 +15,10 @@ MonoBehaviour:
   magicId: 3
   magicName: Mana Ball
   coolDown: 0.5
-  curCoolDown: 0.012472931
+  curCoolDown: 0.5
   duration: 5
   castNum: 2
-  speed: 2
+  speed: 8
   damage: 3
   penetrate: 3
   icon: {fileID: 21300000, guid: b9d3d7dbf5c4f114fbe9d15c62c0f9cc, type: 3}

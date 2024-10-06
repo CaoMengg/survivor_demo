@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Card;
+using System.Collections;
 
 namespace Magic
 {
@@ -34,6 +35,12 @@ namespace Magic
         {
             magicMap = magicList.magicList.ToDictionary(m => m.magicId, m => m);
             magicPool = new List<MagicData>(magicList.magicList);
+            StartCoroutine(DelayDrawn());
+        }
+
+        IEnumerator DelayDrawn()
+        {
+            yield return new WaitForSeconds(1);
             DrawnMagic();
         }
 

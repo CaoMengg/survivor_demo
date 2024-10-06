@@ -15,10 +15,10 @@ MonoBehaviour:
   magicId: 1
   magicName: Fire Ball
   coolDown: 1
-  curCoolDown: 0.05480212
-  duration: 3
+  curCoolDown: 0.4724569
+  duration: 5
   castNum: 2
-  speed: 2
+  speed: 4
   damage: 5
   penetrate: 1000
   icon: {fileID: 21300000, guid: 062eeb9d5e8ba8f45a9ddfea52518f82, type: 3}
