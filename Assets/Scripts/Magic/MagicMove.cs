@@ -4,29 +4,29 @@ using DG.Tweening;
 
 namespace Magic
 {
-    public class MagicFly : MonoBehaviour
+    public class MagicMove : MonoBehaviour
     {
         public MagicData data;
-        private bool isFly = false;
+        private bool isMove = false;
 
         private readonly float maxTargetRange = 25;
         private readonly float traceCoolDown = 0.5f;
         private float curTraceCoolDown = 0;
         private GameObject target;
 
-        public void Fly()
+        public void Move()
         {
-            isFly = true;
-            switch (data.flyType)
+            isMove = true;
+            switch (data.moveType)
             {
-                case FlyType.Line:
+                case MoveType.Line:
                     Line();
                     break;
-                case FlyType.Around:
+                case MoveType.Around:
                     Around();
                     break;
-                case FlyType.Trace:
-                case FlyType.Stay:
+                case MoveType.Trace:
+                case MoveType.Stay:
                     break;
                 default:
                     Line();
@@ -47,12 +47,12 @@ namespace Magic
 
         void Update()
         {
-            if (!isFly)
+            if (!isMove)
             {
                 return;
             }
 
-            if (data.flyType != FlyType.Trace)
+            if (data.moveType != MoveType.Trace)
             {
                 return;
             }

@@ -6,7 +6,7 @@ namespace Magic
     public class MagicShoot : MonoBehaviour
     {
         public MagicData data;
-        public MagicFly magicFly;
+        public MagicMove magicMove;
 
         void Start()
         {
@@ -28,7 +28,7 @@ namespace Magic
                     Dartle();
                     break;
             }
-            magicFly.Fly();
+            magicMove.Move();
         }
 
 

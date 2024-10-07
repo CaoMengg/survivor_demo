@@ -10,7 +10,7 @@ namespace Magic
         Fall,        // 坠落
     }
 
-    public enum FlyType
+    public enum MoveType
     {
         Line,        // 直线
         Around,      // 环绕
@@ -40,7 +40,7 @@ namespace Magic
         [Range(1f, 100f)] public float damage;
         [Range(0, 1000)] public int penetrate;
         public ShootType shootType;
-        public FlyType flyType;
+        public MoveType moveType;
 
         [Header("动态数据")]
         public float curCoolDown;

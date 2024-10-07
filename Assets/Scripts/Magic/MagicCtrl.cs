@@ -82,10 +82,10 @@ namespace Magic
                 GameObject magic = Instantiate(data.magicPrefab, bulletPool.transform);
                 magic.AddComponent<Magic>().data = data;
                 var magicShoot = magic.AddComponent<MagicShoot>();
-                var magicFly = magic.AddComponent<MagicFly>();
+                var magicMove = magic.AddComponent<MagicMove>();
                 magicShoot.data = data;
-                magicFly.data = data;
-                magicShoot.magicFly = magicFly;
+                magicMove.data = data;
+                magicShoot.magicMove = magicMove;
             }
         }
     }
