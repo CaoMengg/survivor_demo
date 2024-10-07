@@ -79,7 +79,7 @@ namespace Magic
         {
             for (int i = 0; i < magic.castNum; i++)
             {
-                GameObject newMagic = Instantiate(magic.magic, bulletPool.transform);
+                GameObject newMagic = Instantiate(magic.magicPrefab, bulletPool.transform);
                 newMagic.GetComponent<Magic>().position = Player.Instance.transform.position;
                 newMagic.GetComponent<Magic>().direct = Player.Instance.faceDirect;
             }

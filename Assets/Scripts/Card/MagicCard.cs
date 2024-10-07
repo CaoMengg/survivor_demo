@@ -12,7 +12,7 @@ namespace Card
         public void Init(Vector3 position, MagicData magic)
         {
             transform.position = position;
-            icon.sprite = magic.icon;
+            icon.sprite = magic.magicIcon;
             text.text = magic.magicName;
         }
     }
