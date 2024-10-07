@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: WaterBall
   m_EditorClassIdentifier: 
-  magicId: 2
-  magicName: Water Ball
+  <magicId>k__BackingField: 2
+  <magicName>k__BackingField: Water Ball
+  <magicIcon>k__BackingField: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}
+  <magicPrefab>k__BackingField: {fileID: 3156861982934887198, guid: 74da91c5534264628b3694567814cbcb, type: 3}
   coolDown: 4
-  curCoolDown: 2.0089421
   duration: 4
   castNum: 3
-  speed: 0
+  speed: 1
   damage: 2
   penetrate: 1000
-  icon: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}
-  magic: {fileID: 3156861982934887198, guid: 74da91c5534264628b3694567814cbcb, type: 3}
+  shootType: 1
+  flyType: 1
+  curCoolDown: 3.6297576

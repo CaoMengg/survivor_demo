@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: PoisonPool
   m_EditorClassIdentifier: 
-  magicId: 4
-  magicName: Poison Pool
+  <magicId>k__BackingField: 4
+  <magicName>k__BackingField: Poison Pool
+  <magicIcon>k__BackingField: {fileID: 21300000, guid: f816f63babfcb3e4d92c5cd9bb193149, type: 3}
+  <magicPrefab>k__BackingField: {fileID: 7055328512823930162, guid: 91628b6b87dff45bb8b86671d6da45b6, type: 3}
   coolDown: 10
-  curCoolDown: 2.4210603
   duration: 10
   castNum: 1
   speed: 0
   damage: 2
   penetrate: 0
-  icon: {fileID: 21300000, guid: f816f63babfcb3e4d92c5cd9bb193149, type: 3}
-  magic: {fileID: 7055328512823930162, guid: 91628b6b87dff45bb8b86671d6da45b6, type: 3}
+  shootType: 3
+  flyType: 3
+  curCoolDown: 5.627201

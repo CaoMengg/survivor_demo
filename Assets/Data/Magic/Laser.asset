@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: Laser
   m_EditorClassIdentifier: 
-  magicId: 0
-  magicName: Laser
+  <magicId>k__BackingField: 0
+  <magicName>k__BackingField: Laser
+  <magicIcon>k__BackingField: {fileID: 21300000, guid: 0f3ba1ed6373fec4bbd0490fb756f318, type: 3}
+  <magicPrefab>k__BackingField: {fileID: 4362998136155550370, guid: 8bb38c010d513494ab328a9687f1ec0b, type: 3}
   coolDown: 0.2
-  curCoolDown: 0.17363289
   duration: 2
   castNum: 2
   speed: 8
   damage: 1
   penetrate: 1
-  icon: {fileID: 21300000, guid: 25180e46342b2214a9d68d0f0ce01ca5, type: 3}
-  magic: {fileID: 4362998136155550370, guid: 8bb38c010d513494ab328a9687f1ec0b, type: 3}
+  shootType: 0
+  flyType: 0
+  curCoolDown: 0.10723385

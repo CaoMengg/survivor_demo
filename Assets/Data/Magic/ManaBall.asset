@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: ManaBall
   m_EditorClassIdentifier: 
-  magicId: 3
-  magicName: Mana Ball
+  <magicId>k__BackingField: 3
+  <magicName>k__BackingField: Mana Ball
+  <magicIcon>k__BackingField: {fileID: 21300000, guid: b9d3d7dbf5c4f114fbe9d15c62c0f9cc, type: 3}
+  <magicPrefab>k__BackingField: {fileID: 3156861982934887198, guid: 11e7c957a440243008dcea79e6aa5780, type: 3}
   coolDown: 0.5
-  curCoolDown: 0.5
   duration: 5
   castNum: 2
   speed: 8
   damage: 3
   penetrate: 3
-  icon: {fileID: 21300000, guid: b9d3d7dbf5c4f114fbe9d15c62c0f9cc, type: 3}
-  magic: {fileID: 3156861982934887198, guid: 11e7c957a440243008dcea79e6aa5780, type: 3}
+  shootType: 2
+  flyType: 2
+  curCoolDown: 0.15200381
