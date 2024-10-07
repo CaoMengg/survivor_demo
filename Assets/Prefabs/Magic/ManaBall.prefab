@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 499692234852620991}
   - component: {fileID: 933822496426943936}
   - component: {fileID: 5245871405248427814}
-  - component: {fileID: 3998900115922760845}
   m_Layer: 7
   m_Name: ManaBall
   m_TagString: Magic
@@ -264,22 +263,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &3998900115922760845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156861982934887198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8a129d2b81940e99e734e147e9369a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 194b88e9f2d0b4d6b9cf4712105cbf15, type: 2}
-  position: {x: 0, y: 0}
-  direct: {x: 0, y: 0}
-  target: {fileID: 0}
 --- !u!1 &4359320255043893433
 GameObject:
   m_ObjectHideFlags: 0

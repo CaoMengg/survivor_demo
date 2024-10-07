@@ -2,6 +2,28 @@ using UnityEngine;
 
 namespace Magic
 {
+    public enum ShootType
+    {
+        Dartle,      // 连射
+        Spread,      // 散射
+        Casual,      // 乱射
+        Fall,        // 坠落
+    }
+
+    public enum FlyType
+    {
+        Line,        // 直线
+        Around,      // 环绕
+        Trace,       // 追踪
+        Stay,        // 停留
+        /*Follow,
+        Arc,
+        Parabola,
+        Bezier,
+        Sine,
+        Lock,*/
+    }
+
     [CreateAssetMenu(fileName = "MagicData", menuName = "ScriptableObject/MagicData")]
     public class MagicData : ScriptableObject
     {
@@ -17,6 +39,8 @@ namespace Magic
         [Range(0f, 20f)] public float speed;
         [Range(1f, 100f)] public float damage;
         [Range(0, 1000)] public int penetrate;
+        public ShootType shootType;
+        public FlyType flyType;
 
         [Header("动态数据")]
         public float curCoolDown;

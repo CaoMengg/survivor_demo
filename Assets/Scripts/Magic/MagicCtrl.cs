@@ -75,13 +75,17 @@ namespace Magic
             }
         }
 
-        void Cast(MagicData magic)
+        void Cast(MagicData data)
         {
-            for (int i = 0; i < magic.castNum; i++)
+            for (int i = 0; i < data.castNum; i++)
             {
-                GameObject newMagic = Instantiate(magic.magicPrefab, bulletPool.transform);
-                newMagic.GetComponent<Magic>().position = Player.Instance.transform.position;
-                newMagic.GetComponent<Magic>().direct = Player.Instance.faceDirect;
+                GameObject magic = Instantiate(data.magicPrefab, bulletPool.transform);
+                magic.AddComponent<Magic>().data = data;
+                var magicShoot = magic.AddComponent<MagicShoot>();
+                var magicFly = magic.AddComponent<MagicFly>();
+                magicShoot.data = data;
+                magicFly.data = data;
+                magicShoot.magicFly = magicFly;
             }
         }
     }

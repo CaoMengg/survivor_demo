@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 499692234852620991}
   - component: {fileID: 933822496426943936}
   - component: {fileID: 4802607337955402843}
-  - component: {fileID: -3902606345345757369}
   m_Layer: 7
   m_Name: WaterBall
   m_TagString: Magic
@@ -351,19 +350,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &-3902606345345757369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156861982934887198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a788c238543864cdd8fb827b652b3ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 4f7d7ac1f8cca4a3095efb9ca3e64fab, type: 2}
-  position: {x: 0, y: 0}
-  direct: {x: 0, y: 0}
-  target: {fileID: 0}

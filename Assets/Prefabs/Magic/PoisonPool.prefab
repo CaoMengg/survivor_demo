@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 7347551469102935182}
   - component: {fileID: 8754046938900257519}
   - component: {fileID: 317619217839036193}
-  - component: {fileID: 1651177298104635282}
   m_Layer: 7
   m_Name: PoisonPool
   m_TagString: Magic
@@ -204,19 +203,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1651177298104635282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7055328512823930162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7051a08a4439842a1b714722c0bfba2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: c995da5fdf94143068a0f9aa3bd540d7, type: 2}
-  position: {x: 0, y: 0}
-  direct: {x: 0, y: 0}
-  target: {fileID: 0}

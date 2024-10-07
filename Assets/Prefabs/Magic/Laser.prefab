@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 3436667815797912413}
   - component: {fileID: -8952619443355242675}
   - component: {fileID: -7051450020520508702}
-  - component: {fileID: 79297506023323593}
   m_Layer: 7
   m_Name: Laser
   m_TagString: Magic
@@ -242,19 +241,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &79297506023323593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362998136155550370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7741b9483abb0402c8c85f768437a273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9e0274f940cef46ba973e0b6c5aaeb41, type: 2}
-  position: {x: 0, y: 0}
-  direct: {x: 0, y: 0}
-  target: {fileID: 0}
