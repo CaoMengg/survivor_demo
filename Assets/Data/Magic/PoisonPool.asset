@@ -16,12 +16,12 @@ MonoBehaviour:
   <magicName>k__BackingField: Poison Pool
   <magicIcon>k__BackingField: {fileID: 21300000, guid: f816f63babfcb3e4d92c5cd9bb193149, type: 3}
   <magicPrefab>k__BackingField: {fileID: 7055328512823930162, guid: 91628b6b87dff45bb8b86671d6da45b6, type: 3}
-  coolDown: 10
-  duration: 10
+  coolDown: 8
+  duration: 8
   castNum: 1
   speed: 0
   damage: 2
-  penetrate: 0
   shootType: 3
-  flyType: 3
-  curCoolDown: 5.627201
+  moveType: 3
+  attackType: 2
+  curCoolDown: 5.308186

@@ -81,6 +81,7 @@ namespace Magic
             {
                 GameObject magic = Instantiate(data.magicPrefab, bulletPool.transform);
                 magic.AddComponent<Magic>().data = data;
+                magic.AddComponent<MagicAttack>().data = data;
                 var magicShoot = magic.AddComponent<MagicShoot>();
                 var magicMove = magic.AddComponent<MagicMove>();
                 magicShoot.data = data;

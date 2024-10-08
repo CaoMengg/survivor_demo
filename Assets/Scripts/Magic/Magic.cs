@@ -6,13 +6,11 @@ namespace Magic
     public class Magic : MonoBehaviour
     {
         public MagicData data;
-        protected float duration;
-        protected int penetrate;
+        float duration;
 
         void Start()
         {
             duration = data.duration;
-            penetrate = data.penetrate;
         }
 
         void Update()
@@ -27,21 +25,6 @@ namespace Magic
         private void OnDestroy()
         {
             DOTween.Kill(transform);
-        }
-
-        protected virtual void OnTriggerEnter2D(Collider2D other)
-        {
-            if (!other.gameObject.TryGetComponent(out Enemy.Enemy enemy))
-            {
-                return;
-            }
-            enemy.TakeDamage(data.damage, transform.up);
-
-            penetrate--;
-            if (penetrate <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 }

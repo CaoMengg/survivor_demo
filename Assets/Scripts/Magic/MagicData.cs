@@ -24,6 +24,14 @@ namespace Magic
         Lock,*/
     }
 
+    public enum AttackType
+    {
+        Single,      // 单体
+        Penetrate,   // 穿透
+        Area,        // 范围持续
+        // Bomb,        // 范围单次
+    }
+
     [CreateAssetMenu(fileName = "MagicData", menuName = "ScriptableObject/MagicData")]
     public class MagicData : ScriptableObject
     {
@@ -38,9 +46,9 @@ namespace Magic
         [Range(1, 10)] public int castNum;
         [Range(0f, 20f)] public float speed;
         [Range(1f, 100f)] public float damage;
-        [Range(0, 1000)] public int penetrate;
         public ShootType shootType;
         public MoveType moveType;
+        public AttackType attackType;
 
         [Header("动态数据")]
         public float curCoolDown;
