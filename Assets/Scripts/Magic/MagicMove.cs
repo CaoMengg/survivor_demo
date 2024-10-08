@@ -9,7 +9,7 @@ namespace Magic
         public MagicData data;
         private bool isMove = false;
 
-        private readonly float maxTargetRange = 25;
+        private readonly float maxTargetRange = 5;
         private readonly float traceCoolDown = 0.5f;
         private float curTraceCoolDown = 0;
         private GameObject target;
@@ -42,7 +42,6 @@ namespace Magic
         void Around()
         {
             transform.SetParent(Player.Instance.body);
-            transform.position = (Vector2)Player.Instance.body.position + Random.insideUnitCircle.normalized * 3;
         }
 
         void Update()
@@ -68,7 +67,7 @@ namespace Magic
             {
                 transform.up = Vector2.Lerp(transform.up, target.transform.position - transform.position, 0.02f).normalized;
             }
-            transform.Translate(transform.up * data.speed * Time.deltaTime, Space.World);
+            transform.Translate(data.speed * Time.deltaTime * transform.up, Space.World);
         }
 
         void GetTarget()
@@ -79,9 +78,7 @@ namespace Magic
                 return;
             }
 
-            target = results
-                .OrderBy(hit => (hit.transform.position - transform.position).sqrMagnitude)
-                .First().gameObject;
+            target = results.OrderBy(hit => (hit.transform.position - transform.position).sqrMagnitude).First().gameObject;
         }
     }
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Magic
 {
     public class MagicShoot : MonoBehaviour
     {
         public MagicData data;
+        public int castSeq;
         public MagicMove magicMove;
 
         void Start()
@@ -31,17 +31,17 @@ namespace Magic
             magicMove.Move();
         }
 
-
         void Dartle()
         {
             transform.up = Player.Instance.faceDirect;
-            transform.position = Player.Instance.transform.position + transform.up * Random.Range(0, 1);
+            transform.position = Player.Instance.transform.position + transform.up * Random.Range(0, 5);
         }
 
         void Spread()
         {
-            transform.up = Player.Instance.faceDirect;
-            transform.position = Player.Instance.transform.position + transform.up * Random.Range(0, 1);
+            float angle = Mathf.Lerp(0f, 360f, (float)castSeq / (float)data.castNum);
+            transform.up = Quaternion.Euler(0, 0, angle) * Player.Instance.faceDirect;
+            transform.position = Player.Instance.transform.position + transform.up * 3;
         }
 
         void Casual()

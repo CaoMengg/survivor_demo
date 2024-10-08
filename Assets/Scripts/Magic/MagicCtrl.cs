@@ -84,8 +84,9 @@ namespace Magic
                 var magicShoot = magic.AddComponent<MagicShoot>();
                 var magicMove = magic.AddComponent<MagicMove>();
                 magicShoot.data = data;
-                magicMove.data = data;
+                magicShoot.castSeq = i;
                 magicShoot.magicMove = magicMove;
+                magicMove.data = data;
             }
         }
     }
