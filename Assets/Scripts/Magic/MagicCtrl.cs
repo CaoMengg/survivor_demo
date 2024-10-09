@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-using Card;
+using HandCard;
 
 namespace Magic
 {
@@ -50,7 +50,7 @@ namespace Magic
             nextMagicList = magicPool.OrderBy(_ => Random.value).Take(drawnNum).ToList();
 
             curMagicList.ForEach(item => item.curCoolDown = 0);
-            CardCtrl.Instance.DrawnCard();
+            HandCardCtrl.Instance.DrawnCard();
         }
 
         void Update()
@@ -61,7 +61,7 @@ namespace Magic
                 curDrawnCD = drawnCD;
                 DrawnMagic();
             }
-            CardCtrl.Instance.UpdateCardSlider(drawnCD, curDrawnCD);
+            HandCardCtrl.Instance.UpdateCardSlider(drawnCD, curDrawnCD);
 
             foreach (var magic in curMagicList)
             {

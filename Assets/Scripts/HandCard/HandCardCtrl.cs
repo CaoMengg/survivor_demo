@@ -3,12 +3,12 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Magic;
 
-namespace Card
+namespace HandCard
 {
-    public class CardCtrl : MonoBehaviour
+    public class HandCardCtrl : MonoBehaviour
     {
-        public static CardCtrl Instance { get; private set; }
-        public GameObject magicCard;
+        public static HandCardCtrl Instance { get; private set; }
+        public GameObject handCardPrefab;
         public GameObject[] curStanceList;
         public GameObject[] nextStanceList;
         private readonly int maxDrawnNum = 4;
@@ -45,8 +45,8 @@ namespace Card
                 if (i < MagicCtrl.Instance.nextMagicList.Count)
                 {
                     var magic = MagicCtrl.Instance.nextMagicList[i];
-                    var card = Instantiate(magicCard, transform);
-                    card.GetComponent<MagicCard>().Init(nextStanceList[0].transform.position, magic);
+                    var card = Instantiate(handCardPrefab, transform);
+                    card.GetComponent<HandCard>().Init(nextStanceList[0].transform.position, magic);
                     card.transform.DOMove(nextStanceList[i].transform.position, 1).SetDelay(1);
                     nextCardList[i] = card;
                 }

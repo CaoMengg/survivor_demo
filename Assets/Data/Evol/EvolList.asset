@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6feb30b90ff04e34935e5e1a2f3c169, type: 3}
+  m_Name: EvolList
+  m_EditorClassIdentifier: 
+  evolList:
+  - {fileID: 11400000, guid: 982f3d4a1a4e24dce9739dc974274975, type: 2}
+  - {fileID: 11400000, guid: 234e8310038624ccf980adfe79795980, type: 2}
+  - {fileID: 11400000, guid: a51eac178d44b4d678f99ae9ae6fbff7, type: 2}
+  - {fileID: 11400000, guid: ff2fdc6339cfd4fdaaaef54b43042aab, type: 2}

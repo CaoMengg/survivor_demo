@@ -21,7 +21,7 @@ MonoBehaviour:
   castNum: 2
   speed: 8
   damage: 1
-  shootType: 0
-  moveType: 0
+  shootType: 1
+  moveType: 1
   attackType: 0
   curCoolDown: 0.15740302

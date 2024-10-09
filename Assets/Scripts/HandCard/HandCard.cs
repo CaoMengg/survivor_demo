@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Magic;
 
-namespace Card
+namespace HandCard
 {
-    public class MagicCard : MonoBehaviour
+    public class HandCard : MonoBehaviour
     {
         public Image icon;
         public Text text;

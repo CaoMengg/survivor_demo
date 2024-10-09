@@ -4,6 +4,7 @@ namespace Magic
 {
     public enum ShootType
     {
+        None,
         Dartle,      // 连射
         Spread,      // 散射
         Casual,      // 乱射
@@ -12,6 +13,7 @@ namespace Magic
 
     public enum MoveType
     {
+        None,
         Line,        // 直线
         Around,      // 环绕
         Trace,       // 追踪
