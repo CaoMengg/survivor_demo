@@ -11,13 +11,13 @@ namespace PowerCard
         {
             data = magic;
             title.text = data.magicName;
+            desc.text = data.magicDesc.Replace("\\n", "\n");
             icon.sprite = data.magicIcon;
         }
 
         public override void PowerUp()
         {
-            Debug.Log("PowerUp");
-            PowerCardCtrl.Instance.PowerUp();
+            PowerCardCtrl.Instance.FinishPowerUp();
         }
     }
 }

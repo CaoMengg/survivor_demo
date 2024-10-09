@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <magicId>k__BackingField: 4
   <magicName>k__BackingField: Poison Pool
+  <magicDesc>k__BackingField: Poison Pool\nFall Stay
   <magicIcon>k__BackingField: {fileID: 21300000, guid: f816f63babfcb3e4d92c5cd9bb193149, type: 3}
   <magicPrefab>k__BackingField: {fileID: 7055328512823930162, guid: 91628b6b87dff45bb8b86671d6da45b6, type: 3}
   coolDown: 8
@@ -24,4 +25,4 @@ MonoBehaviour:
   shootType: 4
   moveType: 4
   attackType: 2
-  curCoolDown: 5.308186
+  curCoolDown: 7.0301623

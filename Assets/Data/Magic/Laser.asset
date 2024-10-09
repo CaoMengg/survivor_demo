@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <magicId>k__BackingField: 0
   <magicName>k__BackingField: Laser
+  <magicDesc>k__BackingField: Laser\nDartle Line
   <magicIcon>k__BackingField: {fileID: 21300000, guid: 0f3ba1ed6373fec4bbd0490fb756f318, type: 3}
   <magicPrefab>k__BackingField: {fileID: 4362998136155550370, guid: 8bb38c010d513494ab328a9687f1ec0b, type: 3}
   coolDown: 0.2
@@ -24,4 +25,4 @@ MonoBehaviour:
   shootType: 1
   moveType: 1
   attackType: 0
-  curCoolDown: 0.15740302
+  curCoolDown: 0.2

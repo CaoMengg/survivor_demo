@@ -32,9 +32,9 @@ namespace PowerCard
             var m0 = Instantiate(powerCardPrefab, panel.transform);
             var m1 = Instantiate(powerCardPrefab, panel.transform);
             var m2 = Instantiate(powerCardPrefab, panel.transform);
-            m0.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[2]);
-            m1.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[3]);
-            m2.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[4]);
+            m0.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[0]);
+            m1.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[1]);
+            m2.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[2]);
             powerCardList[0] = m0;
             powerCardList[1] = m1;
             powerCardList[2] = m2;
@@ -42,7 +42,7 @@ namespace PowerCard
             panel.SetActive(true);
         }
 
-        public void PowerUp()
+        public void FinishPowerUp()
         {
             foreach (var card in powerCardList)
             {

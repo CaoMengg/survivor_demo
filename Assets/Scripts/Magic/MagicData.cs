@@ -39,6 +39,7 @@ namespace Magic
     {
         [field: SerializeField] public int magicId { get; private set; }
         [field: SerializeField] public string magicName { get; private set; }
+        [field: SerializeField] public string magicDesc { get; private set; }
         [field: SerializeField] public Sprite magicIcon { get; private set; }
         [field: SerializeField] public GameObject magicPrefab { get; private set; }
 
