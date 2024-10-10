@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2914509658665402666}
   - component: {fileID: 5884083487090227878}
   - component: {fileID: 2832993939760021035}
-  - component: {fileID: 782240124066218237}
+  - component: {fileID: 7455557045822675533}
   m_Layer: 5
-  m_Name: MagicCard
+  m_Name: MagicEvolCard
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &782240124066218237
+--- !u!114 &7455557045822675533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2103734264590070304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2534f3194dca410bb3864e6ec602c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: e42968a1fe86d478c9105843027f9f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 6993025464206712118}
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 782240124066218237}
-        m_TargetAssemblyTypeName: PowerCard.MagicCard, Assembly-CSharp
+      - m_Target: {fileID: 7455557045822675533}
+        m_TargetAssemblyTypeName: PowerCard.MagicEvolCard, Assembly-CSharp
         m_MethodName: PowerUp
         m_Mode: 1
         m_Arguments:

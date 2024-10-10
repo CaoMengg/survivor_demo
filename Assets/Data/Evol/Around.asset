@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Around
   m_EditorClassIdentifier: 
   <evolId>k__BackingField: 2
-  <evolName>k__BackingField: Around / Cast-1
+  <evolName>k__BackingField: Around
+  <evolDesc>k__BackingField: Around\nCast-1
   <evolIcon>k__BackingField: {fileID: 21300000, guid: ef147e2665db3394ab8f3c2ade98cbf5, type: 3}
   shootType: 0
   moveType: 2

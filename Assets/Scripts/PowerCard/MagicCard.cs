@@ -1,4 +1,3 @@
-using UnityEngine;
 using Magic;
 
 namespace PowerCard

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2914509658665402666}
   - component: {fileID: 5884083487090227878}
   - component: {fileID: 2832993939760021035}
-  - component: {fileID: 782240124066218237}
+  - component: {fileID: 3481631221133089633}
   m_Layer: 5
-  m_Name: MagicCard
+  m_Name: EvolCard
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0.47843137, b: 0.65882355, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.5411765, g: 0.56078434, b: 0.7019608, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &782240124066218237
+--- !u!114 &3481631221133089633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,12 +87,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2103734264590070304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2534f3194dca410bb3864e6ec602c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: c9a58549ba484460f87a88f37e2a7e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 6993025464206712118}
   desc: {fileID: 7282712127368307242}
   icon: {fileID: 648141269440725079}
+  magicEvolCardPrefab: {fileID: 2103734264590070304, guid: 48ad8eac878094ba0aea7dabd02b34ef, type: 3}
 --- !u!1 &2547394208669206688
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,8 +214,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 782240124066218237}
-        m_TargetAssemblyTypeName: PowerCard.MagicCard, Assembly-CSharp
+      - m_Target: {fileID: 3481631221133089633}
+        m_TargetAssemblyTypeName: PowerCard.EvolCard, Assembly-CSharp
         m_MethodName: PowerUp
         m_Mode: 1
         m_Arguments:
@@ -283,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0.47843137, b: 0.65882355, a: 1}
+  m_Color: {r: 0.5411765, g: 0.56078434, b: 0.7019608, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -521,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5686275, g: 0.6666667, b: 0.79607844, a: 1}
+  m_Color: {r: 0.7411765, g: 0.75686276, b: 0.85882354, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

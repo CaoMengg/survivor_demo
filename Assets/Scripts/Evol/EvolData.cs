@@ -7,6 +7,7 @@ namespace Evol
     {
         [field: SerializeField] public int evolId { get; private set; }
         [field: SerializeField] public string evolName { get; private set; }
+        [field: SerializeField] public string evolDesc { get; private set; }
         [field: SerializeField] public Sprite evolIcon { get; private set; }
 
         [Header("属性")]

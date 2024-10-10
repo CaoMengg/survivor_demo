@@ -25,4 +25,4 @@ MonoBehaviour:
   shootType: 4
   moveType: 4
   attackType: 2
-  curCoolDown: 7.0301623
+  curCoolDown: 0

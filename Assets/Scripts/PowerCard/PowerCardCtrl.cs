@@ -1,14 +1,18 @@
+using System.Linq;
 using UnityEngine;
-using Magic;
+using Evol;
+using System.Collections.Generic;
 
 namespace PowerCard
 {
     public class PowerCardCtrl : MonoBehaviour
     {
         public static PowerCardCtrl Instance { get; private set; }
-        public GameObject powerCardPrefab;
-        private GameObject[] powerCardList = new GameObject[3];
-        public GameObject panel;
+        public EvolList evolList;
+        public GameObject evolCardPrefab;
+        private List<GameObject> powerCardList = new();
+        public GameObject powerUpPanel;
+        public GameObject magicEvolPanel;
 
         void Awake()
         {
@@ -24,22 +28,20 @@ namespace PowerCard
 
         void Start()
         {
-            InvokeRepeating(nameof(ShowPowerUp), 10f, 30f);
+            InvokeRepeating(nameof(ShowPowerUp), 10f, 10f);
         }
 
         public void ShowPowerUp()
         {
-            var m0 = Instantiate(powerCardPrefab, panel.transform);
-            var m1 = Instantiate(powerCardPrefab, panel.transform);
-            var m2 = Instantiate(powerCardPrefab, panel.transform);
-            m0.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[0]);
-            m1.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[1]);
-            m2.GetComponent<MagicCard>().Init(MagicCtrl.Instance.magicList.magicList[2]);
-            powerCardList[0] = m0;
-            powerCardList[1] = m1;
-            powerCardList[2] = m2;
+            foreach (var evolData in evolList.evolList.OrderBy(_ => Random.value).Take(3))
+            {
+                var card = Instantiate(evolCardPrefab, powerUpPanel.transform);
+                card.GetComponent<EvolCard>().Init(evolData);
+                powerCardList.Add(card);
+            }
             UI.Instance.PauseGame();
-            panel.SetActive(true);
+            powerUpPanel.SetActive(true);
+            magicEvolPanel.SetActive(false);
         }
 
         public void FinishPowerUp()
@@ -48,8 +50,9 @@ namespace PowerCard
             {
                 Destroy(card);
             }
-            panel.SetActive(false);
             UI.Instance.ResumeGame();
+            powerUpPanel.SetActive(false);
+            magicEvolPanel.SetActive(false);
         }
     }
 }

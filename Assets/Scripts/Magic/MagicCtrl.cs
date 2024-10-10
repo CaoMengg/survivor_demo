@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 using HandCard;
@@ -9,14 +8,12 @@ namespace Magic
     public class MagicCtrl : MonoBehaviour
     {
         public static MagicCtrl Instance { get; private set; }
-        public MagicList magicList;
-        private Dictionary<int, MagicData> magicMap;
+        [SerializeField] private MagicList magicList;
         public float drawnCD = 10;
-        private float curDrawnCD = 0;
         public int drawnNum = 3;
-        private List<MagicData> magicPool;
-        private List<MagicData> curMagicList;
-        public List<MagicData> nextMagicList;
+        public List<MagicData> magicPool;
+        private List<MagicData> curMagicList = new();
+        public List<MagicData> nextMagicList = new();
         public GameObject bulletPool;
 
         void Awake()
@@ -33,19 +30,18 @@ namespace Magic
 
         void Start()
         {
-            magicMap = magicList.magicList.ToDictionary(m => m.magicId, m => m);
-            magicPool = new List<MagicData>(magicList.magicList);
-            StartCoroutine(DelayDrawn());
-        }
-
-        IEnumerator DelayDrawn()
-        {
-            yield return new WaitForSeconds(1);
+            magicPool = new() { };
+            foreach (var magicData in magicList.magicList)
+            {
+                magicPool.Add(Instantiate(magicData));
+            }
             DrawnMagic();
+            InvokeRepeating(nameof(DrawnMagic), 1, drawnCD);
         }
 
         void DrawnMagic()
         {
+            curMagicList.Clear();
             curMagicList = nextMagicList;
             nextMagicList = magicPool.OrderBy(_ => Random.value).Take(drawnNum).ToList();
 
@@ -55,13 +51,7 @@ namespace Magic
 
         void Update()
         {
-            curDrawnCD -= Time.deltaTime;
-            if (curDrawnCD <= 0)
-            {
-                curDrawnCD = drawnCD;
-                DrawnMagic();
-            }
-            HandCardCtrl.Instance.UpdateCardSlider(drawnCD, curDrawnCD);
+            // HandCardCtrl.Instance.UpdateCardSlider(drawnCD, curDrawnCD);
 
             foreach (var magic in curMagicList)
             {

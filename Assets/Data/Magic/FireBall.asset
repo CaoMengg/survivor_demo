@@ -19,10 +19,10 @@ MonoBehaviour:
   <magicPrefab>k__BackingField: {fileID: 3156861982934887198, guid: f0416e1333b644ed0b0dc2bd332d3f9b, type: 3}
   coolDown: 1
   duration: 5
-  castNum: 2
+  castNum: 3
   speed: 4
   damage: 5
   shootType: 3
   moveType: 1
   attackType: 1
-  curCoolDown: 1
+  curCoolDown: 0
