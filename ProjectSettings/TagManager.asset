@@ -41,17 +41,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2193166449
     locked: 0
-  - name: Enemy
-    uniqueID: 3620154123
-    locked: 0
-  - name: Magic
-    uniqueID: 3754743901
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 290403043

@@ -34,11 +34,12 @@ namespace Enemy
 
             for (int i = 0; i < spawnNum; i++)
             {
-                var direct = Random.insideUnitCircle * 8;
-                direct += direct.normalized * 5;
+                var direct = Random.insideUnitSphere * 8;
+                direct += direct.normalized * 5 + Player.Instance.transform.position;
                 var index = Random.Range(0, enemyList.enemyList.Count);
                 var obj = Instantiate(enemyList.enemyList[index].enemy, enemyPool);
-                obj.transform.position = (Vector2)Player.Instance.transform.position + direct;
+                direct.z = 1;
+                obj.transform.position = direct;
             }
         }
     }
