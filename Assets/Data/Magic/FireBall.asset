@@ -16,7 +16,7 @@ MonoBehaviour:
   <magicName>k__BackingField: Fire Ball
   <magicDesc>k__BackingField: Fire Ball\nCasual Line
   <magicIcon>k__BackingField: {fileID: 21300000, guid: e32b8056f5f2eb741bec42f791c7f1b5, type: 3}
-  <magicPrefab>k__BackingField: {fileID: 3156861982934887198, guid: f0416e1333b644ed0b0dc2bd332d3f9b, type: 3}
+  <magicPrefab>k__BackingField: {fileID: 3444392792544804631, guid: 3732ab1a3638e4b1a991241785f23482, type: 3}
   coolDown: 1
   duration: 5
   castNum: 3

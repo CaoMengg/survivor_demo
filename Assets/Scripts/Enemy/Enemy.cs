@@ -10,8 +10,8 @@ namespace Enemy
 
         void Update()
         {
-            transform.up = (Vector2)(Player.Instance.transform.position - transform.position).normalized;
-            transform.Translate(speed * Time.deltaTime * transform.up);
+            transform.up = (Player.Instance.transform.position - transform.position).normalized;
+            transform.Translate(speed * Time.deltaTime * transform.up, Space.World);
         }
 
         public void TakeDamage(float damage, Vector2 direct)

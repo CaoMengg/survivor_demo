@@ -41,7 +41,7 @@ namespace Magic
         {
             float angle = Mathf.Lerp(0f, 360f, (float)castSeq / (float)data.castNum);
             transform.up = Quaternion.Euler(0, 0, angle) * Player.Instance.faceDirect;
-            transform.position = Player.Instance.transform.position + transform.up * 3;
+            transform.position = Player.Instance.transform.position + transform.up * 5;
         }
 
         void Casual()
