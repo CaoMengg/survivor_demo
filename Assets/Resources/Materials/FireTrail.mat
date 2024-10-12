@@ -194,7 +194,7 @@ Material:
     - _FadeScrollYSpeed: 0
     - _FadeTransition: 0.075
     - _FishEyeUvAmount: 0.35
-    - _Glow: 0.3
+    - _Glow: 0.2
     - _GlowGlobal: 1
     - _HandDrawnAmount: 10
     - _HandDrawnSpeed: 5
@@ -313,7 +313,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z_TrailWidthGradientTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.1450064778327942},{"color":{"r":0.4811320900917053,"g":0.4811320900917053,"b":0.4811320900917053,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z_TrailWidthGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.7924528121948242,"g":0.781238853931427,"b":0.781238853931427,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.1450064778327942},{"color":{"r":0.4811320900917053,"g":0.4811320900917053,"b":0.4811320900917053,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -349,7 +349,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdfdfdfffafafafff8f8f8fff6f6f6fff3f3f3fff1f1f1ffeeeeeeffecececffe9e9e9ffe7e7e7ffe4e4e4ffe2e2e2ffdfdfdfffddddddffdadadaffd8d8d8ffd6d6d6ffd3d3d3ffd1d1d1ffcececeffccccccffc9c9c9ffc7c7c7ffc4c4c4ffc2c2c2ffbfbfbfffbdbdbdffbbbbbbffb8b8b8ffb6b6b6ffb3b3b3ffb1b1b1ffaeaeaeffacacacffa9a9a9ffa7a7a7ffa4a4a4ffa2a2a2ffa0a0a0ff9d9d9dff9b9b9bff989898ff969696ff939393ff919191ff8e8e8eff8c8c8cff898989ff878787ff858585ff828282ff808080ff7d7d7dff7b7b7bff
+  _typelessdata: cac7c7ffd0cdcdffd6d3d3ffdbdadaffe1e0e0ffe7e6e6ffedececfff3f2f2fff8f8f8fffefefefffdfdfdfffafafafff8f8f8fff6f6f6fff3f3f3fff1f1f1ffeeeeeeffecececffe9e9e9ffe7e7e7ffe4e4e4ffe2e2e2ffdfdfdfffddddddffdadadaffd8d8d8ffd6d6d6ffd3d3d3ffd1d1d1ffcececeffccccccffc9c9c9ffc7c7c7ffc4c4c4ffc2c2c2ffbfbfbfffbdbdbdffbbbbbbffb8b8b8ffb6b6b6ffb3b3b3ffb1b1b1ffaeaeaeffacacacffa9a9a9ffa7a7a7ffa4a4a4ffa2a2a2ffa0a0a0ff9d9d9dff9b9b9bff989898ff969696ff939393ff919191ff8e8e8eff8c8c8cff898989ff878787ff858585ff828282ff808080ff7d7d7dff7b7b7bff
   m_StreamData:
     serializedVersion: 2
     offset: 0

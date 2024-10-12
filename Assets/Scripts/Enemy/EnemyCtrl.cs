@@ -23,6 +23,20 @@ namespace Enemy
             }
         }
 
+        void Start()
+        {
+            InvokeRepeating(nameof(UpdateCD), 300f, 300f);
+        }
+
+        void UpdateCD()
+        {
+            coolDown -= 0.1f;
+            if (coolDown < 0.2f)
+            {
+                coolDown = 0.2f;
+            }
+        }
+
         void Update()
         {
             curCoolDown -= Time.deltaTime;

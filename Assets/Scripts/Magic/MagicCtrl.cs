@@ -47,12 +47,11 @@ namespace Magic
 
             curMagicList.ForEach(item => item.curCoolDown = 0);
             HandCardCtrl.Instance.DrawnCard();
+            HandCardCtrl.Instance.UpdateCardSlider(drawnCD, drawnCD);
         }
 
         void Update()
         {
-            // HandCardCtrl.Instance.UpdateCardSlider(drawnCD, curDrawnCD);
-
             foreach (var magic in curMagicList)
             {
                 magic.curCoolDown -= Time.deltaTime;

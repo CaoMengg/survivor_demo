@@ -28,6 +28,11 @@ namespace HandCard
             }
         }
 
+        void Update()
+        {
+            cardSlider.value -= Time.deltaTime;
+        }
+
         public void DrawnCard()
         {
             for (int i = 0; i < maxDrawnNum; i++)

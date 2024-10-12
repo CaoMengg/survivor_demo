@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <evolId>k__BackingField: 0
   <evolName>k__BackingField: Dartle
-  <evolDesc>k__BackingField: Dartle\nCast+2
+  <evolDesc>k__BackingField: Dartle\nCast+1
   <evolIcon>k__BackingField: {fileID: 21300000, guid: de328077ad8c9594c9ec3cf1023b25fe, type: 3}
   shootType: 1
   moveType: 0
-  castNum: 2
+  castNum: 1

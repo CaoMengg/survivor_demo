@@ -36,7 +36,7 @@ namespace Magic
 
         void Line()
         {
-            transform.DOMove(transform.position + data.speed * data.duration * transform.up, data.duration);
+            transform.DOMove(transform.position + data.speed * data.duration * transform.up, data.duration).SetEase(Ease.Linear);
         }
 
         void Around()

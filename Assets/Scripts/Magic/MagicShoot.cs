@@ -34,7 +34,7 @@ namespace Magic
         void Dartle()
         {
             transform.up = Player.Instance.faceDirect;
-            transform.position = Player.Instance.transform.position + transform.up * Random.Range(0, 5);
+            transform.position = Player.Instance.transform.position + transform.up * (castSeq + 2);
         }
 
         void Spread()
@@ -47,7 +47,7 @@ namespace Magic
         void Casual()
         {
             transform.up = Random.insideUnitCircle.normalized;
-            transform.position = Player.Instance.transform.position + transform.up * Random.Range(0, 1);
+            transform.position = Player.Instance.transform.position + transform.up * Random.Range(3, 6);
         }
 
         void Fall()

@@ -28,7 +28,8 @@ namespace PowerCard
 
         void Start()
         {
-            // InvokeRepeating(nameof(ShowPowerUp), 10f, 10f);
+            // Invoke(nameof(ShowPowerUp), 1f);
+            InvokeRepeating(nameof(ShowPowerUp), 30f, 60f);
         }
 
         public void ShowPowerUp()

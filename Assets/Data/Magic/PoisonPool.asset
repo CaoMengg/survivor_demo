@@ -20,7 +20,7 @@ MonoBehaviour:
   coolDown: 8
   duration: 8
   castNum: 1
-  speed: 1
+  speed: 2
   damage: 2
   shootType: 4
   moveType: 4
