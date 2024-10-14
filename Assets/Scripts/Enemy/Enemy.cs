@@ -5,11 +5,20 @@ namespace Enemy
     public class Enemy : MonoBehaviour
     {
         public Rigidbody2D rb;
+        public Animator animator;
         public float speed;
         public float health;
         private bool isDead = false;
         private Vector2 faceDirect = Vector2.up;
-        public Animator animator;
+
+        public void Init(Vector2 position, EnemyData data)
+        {
+            transform.position = position;
+            rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
+            health = data.health;
+            speed = data.speed;
+        }
 
         void Update()
         {

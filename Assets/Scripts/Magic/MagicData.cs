@@ -43,17 +43,19 @@ namespace Magic
         [field: SerializeField] public Sprite magicIcon { get; private set; }
         [field: SerializeField] public GameObject magicPrefab { get; private set; }
 
-        [Header("战斗属性")]
+        [Header("机制")]
+        public ShootType shootType;
+        public MoveType moveType;
+        public AttackType attackType;
+
+        [Header("数值")]
         [Range(0.1f, 10f)] public float coolDown;
         [Range(1f, 30f)] public float duration;
         [Range(1, 10)] public int castNum;
         [Range(0f, 20f)] public float speed;
         [Range(1f, 100f)] public float damage;
-        public ShootType shootType;
-        public MoveType moveType;
-        public AttackType attackType;
 
-        [Header("动态数据")]
+        [Header("其它")]
         public float curCoolDown;
     }
 }

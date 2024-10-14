@@ -46,13 +46,27 @@ namespace Enemy
             }
             curCoolDown = coolDown;
 
+            float spawnRate;
+            float curRate;
             for (int i = 0; i < spawnNum; i++)
             {
-                var direct = Random.insideUnitCircle * 12;
-                direct += direct.normalized * 10;
-                var index = Random.Range(0, enemyList.enemyList.Count);
-                var obj = Instantiate(enemyList.enemyList[index].enemy, enemyPool);
-                obj.transform.position = (Vector2)Player.Instance.transform.position + direct;
+                spawnRate = Random.Range(0, 1000);
+                curRate = 0;
+                foreach (var enemyData in enemyList.enemyList)
+                {
+                    curRate += enemyData.spawnRate;
+                    if (spawnRate >= curRate)
+                    {
+                        continue;
+                    }
+
+
+                    var direct = Random.insideUnitCircle * 12;
+                    direct += direct.normalized * 10;
+                    GameObject enemy = Instantiate(enemyData.enemyPrefab, enemyPool);
+                    enemy.AddComponent<Enemy>().Init((Vector2)Player.Instance.transform.position + direct, enemyData);
+                    break;
+                }
             }
         }
     }

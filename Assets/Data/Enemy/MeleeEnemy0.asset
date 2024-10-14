@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932a9a1e4f19647cbbaf5d99d694b92e, type: 3}
   m_Name: MeleeEnemy0
   m_EditorClassIdentifier: 
-  enemyId: 0
-  enemyName: 
-  enemy: {fileID: 3975544248848397583, guid: aa0d1e2881a8b1b4fa79f128c166c492, type: 3}
+  <enemyId>k__BackingField: 0
+  <enemyName>k__BackingField: 
+  <enemyPrefab>k__BackingField: {fileID: 3975544248848397583, guid: aa0d1e2881a8b1b4fa79f128c166c492, type: 3}
+  <spawnRate>k__BackingField: 500
+  <health>k__BackingField: 10
+  <speed>k__BackingField: 2
+  <damage>k__BackingField: 0
