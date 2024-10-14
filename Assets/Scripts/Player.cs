@@ -5,7 +5,7 @@ using DG.Tweening;
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    private readonly float speed = 3;
+    private readonly float speed = 5;
     private readonly float range = 10;
     private bool isMove = false;
     private Vector2 inputDirect = Vector2.zero;

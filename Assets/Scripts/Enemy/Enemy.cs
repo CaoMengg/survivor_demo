@@ -7,16 +7,31 @@ namespace Enemy
         public Rigidbody2D rb;
         public float speed;
         public float health;
+        private bool isDead = false;
+        private Vector2 faceDirect = Vector2.up;
+        public Animator animator;
 
         void Update()
         {
-            transform.up = (Player.Instance.transform.position - transform.position).normalized;
-            transform.Translate(speed * Time.deltaTime * transform.up, Space.World);
+            if (isDead)
+            {
+                return;
+            }
+            faceDirect = (Player.Instance.transform.position - transform.position).normalized;
+            if (faceDirect.x > 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (faceDirect.x < 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            transform.Translate(speed * Time.deltaTime * faceDirect, Space.World);
         }
 
         public void TakeDamage(float damage, Vector2 direct)
         {
-            if (damage <= 0)
+            if (isDead || damage <= 0)
             {
                 return;
             }
@@ -24,13 +39,15 @@ namespace Enemy
             Popup.DamageCtrl.Instance.Show(damage, transform.position);
             if (health <= 0)
             {
-                Destroy(gameObject);
+                isDead = true;
+                animator.SetBool("isDead", isDead);
+                Destroy(gameObject, 1);
                 return;
             }
 
             if (direct != Vector2.zero)
             {
-                rb.AddForce(5 * damage * direct, ForceMode2D.Impulse);
+                rb.AddForce(0.5f * damage * direct, ForceMode2D.Impulse);
             }
         }
     }
