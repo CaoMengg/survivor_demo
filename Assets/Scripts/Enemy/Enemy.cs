@@ -45,7 +45,7 @@ namespace Enemy
                 return;
             }
             health -= damage;
-            Popup.DamageCtrl.Instance.Show(damage, transform.position);
+            Popup.DamageTextCtrl.Instance.Show(damage, transform.position);
             if (health <= 0)
             {
                 isDead = true;

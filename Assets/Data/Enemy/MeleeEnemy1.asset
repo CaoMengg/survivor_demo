@@ -15,7 +15,7 @@ MonoBehaviour:
   <enemyId>k__BackingField: 1
   <enemyName>k__BackingField: 
   <enemyPrefab>k__BackingField: {fileID: 2365404010451191750, guid: 6617b6fafb7d3f74090cb160ce26a6f0, type: 3}
-  <spawnRate>k__BackingField: 450
+  <spawnRate>k__BackingField: 380
   <health>k__BackingField: 5
   <speed>k__BackingField: 4
   <damage>k__BackingField: 0

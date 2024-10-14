@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace Popup
 {
-    public class DamageCtrl : MonoBehaviour
+    public class DamageTextCtrl : MonoBehaviour
     {
-        public static DamageCtrl Instance { get; private set; }
+        public static DamageTextCtrl Instance { get; private set; }
         public float duration = 1;
         public AnimationCurve scaleCurve;
-        public Damage damagePrefab;
-        public Transform damagePool;
+        public DamageText damageTextPrefab;
+        public Transform damageTextPool;
 
         void Awake()
         {
@@ -24,7 +24,7 @@ namespace Popup
 
         public void Show(float damage, Vector2 position)
         {
-            Instantiate(damagePrefab, damagePool).Init(damage, position);
+            Instantiate(damageTextPrefab, damageTextPool).Init(damage, position);
         }
     }
 }
