@@ -18,8 +18,8 @@ namespace Magic
         Around,      // 环绕
         Trace,       // 追踪
         Stay,        // 停留
+        Arc,         // 弧线
         /*Follow,
-        Arc,
         Parabola,
         Bezier,
         Sine,

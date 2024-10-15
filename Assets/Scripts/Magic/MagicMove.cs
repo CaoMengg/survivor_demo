@@ -13,6 +13,7 @@ namespace Magic
         private readonly float traceCoolDown = 0.5f;
         private float curTraceCoolDown = 0;
         private GameObject target;
+        private GameObject pivot;
 
         public void Move()
         {
@@ -24,6 +25,9 @@ namespace Magic
                     break;
                 case MoveType.Around:
                     Around();
+                    break;
+                case MoveType.Arc:
+                    Arc();
                     break;
                 case MoveType.Trace:
                 case MoveType.Stay:
@@ -41,7 +45,25 @@ namespace Magic
 
         void Around()
         {
-            transform.SetParent(Player.Instance.body);
+            pivot = new GameObject("Pivot");
+            pivot.transform.position = Player.Instance.transform.position;
+            pivot.transform.SetParent(Player.Instance.transform);
+            transform.SetParent(pivot.transform);
+
+            transform.up = (transform.position - pivot.transform.position).normalized;
+            var distance = Mathf.Sqrt((pivot.transform.position - transform.position).sqrMagnitude);
+            pivot.transform.DORotate(new Vector3(0, 0, data.speed * data.duration * 57 / distance), data.duration, RotateMode.FastBeyond360)
+            .SetEase(Ease.Linear).SetLoops(-1).SetLink(pivot);
+        }
+
+        void Arc()
+        {
+            pivot = new GameObject("Pivot");
+            pivot.transform.position = transform.position - transform.up * 8;
+            transform.SetParent(pivot.transform);
+
+            pivot.transform.DORotate(new Vector3(0, 0, data.speed * data.duration * 7.2f), data.duration, RotateMode.FastBeyond360)
+            .SetEase(Ease.InOutSine).SetLoops(-1).SetLink(pivot);
         }
 
         void Update()
@@ -79,6 +101,14 @@ namespace Magic
             }
 
             target = results.OrderBy(hit => (hit.transform.position - transform.position).sqrMagnitude).First().gameObject;
+        }
+
+        void OnDestroy()
+        {
+            if (pivot != null)
+            {
+                Destroy(pivot);
+            }
         }
     }
 }

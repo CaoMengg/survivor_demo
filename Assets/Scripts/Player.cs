@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
 
     private readonly Collider2D[] enemyResults = new Collider2D[10];
     private GameObject target;
-    public Transform body;
 
     void Awake()
     {
@@ -26,12 +25,6 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
-        body.DORotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
-        .SetLoops(-1).SetEase(Ease.Linear).SetRelative();
     }
 
     void Update()
