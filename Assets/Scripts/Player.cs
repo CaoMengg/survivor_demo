@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        body.DORotate(new Vector3(0, 0, 360), 1.5f, RotateMode.FastBeyond360)
+        body.DORotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
         .SetLoops(-1).SetEase(Ease.Linear).SetRelative();
     }
 

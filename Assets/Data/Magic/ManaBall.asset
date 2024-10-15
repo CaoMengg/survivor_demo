@@ -17,12 +17,12 @@ MonoBehaviour:
   <magicDesc>k__BackingField: Mana Ball\nCasual Trace
   <magicIcon>k__BackingField: {fileID: 21300000, guid: b9d3d7dbf5c4f114fbe9d15c62c0f9cc, type: 3}
   <magicPrefab>k__BackingField: {fileID: 3156861982934887198, guid: 11e7c957a440243008dcea79e6aa5780, type: 3}
+  shootType: 3
+  moveType: 3
+  attackType: 1
   coolDown: 0.5
   duration: 5
   castNum: 2
   speed: 8
   damage: 3
-  shootType: 3
-  moveType: 3
-  attackType: 1
   curCoolDown: 0

@@ -22,6 +22,7 @@ Material:
   - COLORRAMP_ON
   - GLOW_ON
   - HSV_ON
+  - PIXELATE_ON
   - PREMULTIPLYCOLOR_ON
   - RIM_ON
   - SHAPE1CONTRAST_ON
@@ -162,7 +163,7 @@ Material:
     - _OffsetSh2: 1
     - _OffsetSh3: 1
     - _PinchUvAmount: 0.35
-    - _PixelateSize: 32
+    - _PixelateSize: 16
     - _PosterizeGamma: 1.7
     - _PosterizeNumColors: 8
     - _RandomSh1Mult: 1

@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - ADDITIVECONFIG_ON
+  - PIXELATE_ON
   - SHAPE2DISTORT_ON
   - SHAPE2_ON
   - SHAPEADD_ON
@@ -145,7 +146,7 @@ Material:
     - _OffsetSh1: 1
     - _OffsetSh2: 1
     - _OffsetSh3: 1
-    - _PixelateSize: 32
+    - _PixelateSize: 128
     - _PosterizeNumColors: 5
     - _RandomSh1Mult: 1
     - _RandomSh2Mult: 1

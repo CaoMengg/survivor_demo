@@ -17,12 +17,12 @@ MonoBehaviour:
   <magicDesc>k__BackingField: Water Ball\nSpread Around
   <magicIcon>k__BackingField: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}
   <magicPrefab>k__BackingField: {fileID: 2748177045849229936, guid: 79204d18bd0194fbf9fa8f5a337c27a6, type: 3}
+  shootType: 2
+  moveType: 2
+  attackType: 1
   coolDown: 4
   duration: 4
   castNum: 3
   speed: 8
   damage: 2
-  shootType: 2
-  moveType: 2
-  attackType: 1
   curCoolDown: 0
