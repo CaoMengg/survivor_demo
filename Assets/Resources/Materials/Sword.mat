@@ -8,18 +8,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sword
-  m_Shader: {fileID: 4800000, guid: 6eb86e4931b506a408fd1477edec61ea, type: 3}
+  m_Shader: {fileID: 4800000, guid: b430983578466934c944e7171b4c372c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - ADDITIVECONFIG_ON
+  - PIXELATE_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e3cbda2e9f8b0514d9e467b176b6326b, type: 3}
+        m_Texture: {fileID: 2800000, guid: fac8dd8c97ac9ad40b983aa619536d69, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -143,7 +143,7 @@ Material:
     - _OffsetSh1: 1
     - _OffsetSh2: 1
     - _OffsetSh3: 1
-    - _PixelateSize: 32
+    - _PixelateSize: 16
     - _PosterizeNumColors: 5
     - _RandomSh1Mult: 1
     - _RandomSh2Mult: 1
@@ -238,5 +238,5 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShapeColor: {r: 0.9716981, g: 0.935052, b: 0.64627093, a: 1}
+    - _ShapeColor: {r: 0.8301887, g: 0.7231016, b: 0.5208259, a: 0.39215687}
   m_BuildTextureStacks: []

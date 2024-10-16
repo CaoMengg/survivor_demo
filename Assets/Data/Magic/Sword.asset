@@ -23,6 +23,6 @@ MonoBehaviour:
   coolDown: 3
   duration: 1
   castNum: 2
-  speed: 10
+  speed: 15
   damage: 5
   curCoolDown: 0

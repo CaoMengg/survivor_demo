@@ -49,10 +49,10 @@ namespace Magic
         public AttackType attackType;
 
         [Header("数值")]
-        [Range(0.1f, 10f)] public float coolDown;
-        [Range(1f, 30f)] public float duration;
+        [Range(0.2f, 10f)] public float coolDown;
+        [Range(0.5f, 30f)] public float duration;
         [Range(1, 10)] public int castNum;
-        [Range(0f, 20f)] public float speed;
+        [Range(1f, 20f)] public float speed;
         [Range(1f, 100f)] public float damage;
 
         [Header("其它")]

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     private readonly Collider2D[] enemyResults = new Collider2D[10];
     private GameObject target;
+    public Transform playerBody;
 
     void Awake()
     {
@@ -55,11 +56,11 @@ public class Player : MonoBehaviour
             faceDirect = inputDirect;
             if (inputDirect.x > 0)
             {
-                transform.localScale = new Vector3(-1, 1, 1);
+                playerBody.localScale = new Vector3(-1, 1, 1);
             }
             else if (inputDirect.x < 0)
             {
-                transform.localScale = new Vector3(1, 1, 1);
+                playerBody.localScale = new Vector3(1, 1, 1);
             }
         }
         else
