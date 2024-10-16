@@ -20,7 +20,7 @@ namespace Magic
             }
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerEnter2D(Collider2D other)
         {
             if (data.attackType != AttackType.Single && data.attackType != AttackType.Penetrate)
             {

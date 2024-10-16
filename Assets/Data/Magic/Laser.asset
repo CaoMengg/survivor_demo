@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <magicId>k__BackingField: 0
   <magicName>k__BackingField: Laser
-  <magicDesc>k__BackingField: Laser\nDartle Line
+  <magicDesc>k__BackingField: Laser\nSpread Line
   <magicIcon>k__BackingField: {fileID: 21300000, guid: ed8ef41e0593c444f89985400bb18768, type: 3}
-  <magicPrefab>k__BackingField: {fileID: 4362998136155550370, guid: 8bb38c010d513494ab328a9687f1ec0b, type: 3}
-  coolDown: 0.2
-  duration: 2
+  <magicPrefab>k__BackingField: {fileID: 2941757530948711763, guid: 829d8753a4527459e875138326278b62, type: 3}
+  shootType: 2
+  moveType: 1
+  attackType: 1
+  coolDown: 4
+  duration: 4
   castNum: 2
   speed: 8
-  damage: 1
-  shootType: 1
-  moveType: 1
-  attackType: 0
+  damage: 8
   curCoolDown: 0

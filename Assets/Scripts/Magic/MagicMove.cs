@@ -51,7 +51,7 @@ namespace Magic
             transform.SetParent(pivot.transform);
 
             transform.up = (transform.position - pivot.transform.position).normalized;
-            var distance = Mathf.Sqrt((pivot.transform.position - transform.position).sqrMagnitude);
+            var distance = (pivot.transform.position - transform.position).magnitude;
             pivot.transform.DORotate(new Vector3(0, 0, data.speed * data.duration * 57 / distance), data.duration, RotateMode.FastBeyond360)
             .SetEase(Ease.Linear).SetLoops(-1).SetLink(pivot);
         }
