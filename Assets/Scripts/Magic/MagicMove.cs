@@ -9,7 +9,6 @@ namespace Magic
         public MagicData data;
         private bool isMove = false;
 
-        private readonly float maxTargetRange = 5;
         private readonly float traceCoolDown = 0.5f;
         private float curTraceCoolDown = 0;
         private GameObject target;
@@ -31,6 +30,7 @@ namespace Magic
                     break;
                 case MoveType.Trace:
                 case MoveType.Stay:
+                case MoveType.Reflect:
                     break;
                 default:
                     Line();
@@ -56,32 +56,12 @@ namespace Magic
             .SetEase(Ease.Linear).SetLoops(-1).SetLink(pivot);
         }
 
-        void Arc()
+        void Trace()
         {
-            pivot = new GameObject("Pivot");
-            pivot.transform.position = transform.position - transform.up * 8;
-            transform.SetParent(pivot.transform);
-
-            pivot.transform.DORotate(new Vector3(0, 0, data.speed * data.duration * 7.2f), data.duration, RotateMode.FastBeyond360)
-            .SetEase(Ease.InOutSine).SetLoops(-1).SetLink(pivot);
-        }
-
-        void Update()
-        {
-            if (!isMove)
-            {
-                return;
-            }
-
-            if (data.moveType != MoveType.Trace)
-            {
-                return;
-            }
-
             curTraceCoolDown -= Time.deltaTime;
             if (target == null && curTraceCoolDown <= 0)
             {
-                GetTarget();
+                GetTraceTarget();
                 curTraceCoolDown = traceCoolDown;
             }
 
@@ -92,15 +72,38 @@ namespace Magic
             transform.Translate(data.speed * Time.deltaTime * transform.up, Space.World);
         }
 
-        void GetTarget()
+        void Arc()
         {
-            var results = Physics2D.OverlapCircleAll(transform.position, maxTargetRange, LayerMask.GetMask("Enemy"));
-            if (results.Length == 0)
+            pivot = new GameObject("Pivot");
+            pivot.transform.position = transform.position - transform.up * 8;
+            pivot.transform.SetParent(MagicCtrl.Instance.bulletPool.transform);
+            transform.SetParent(pivot.transform);
+
+            pivot.transform.DORotate(new Vector3(0, 0, data.speed * data.duration * 7.2f), data.duration, RotateMode.FastBeyond360)
+            .SetEase(Ease.InOutSine).SetLoops(-1).SetLink(pivot);
+        }
+
+        void Reflect()
+        {
+            transform.Translate(data.speed * Time.deltaTime * transform.up, Space.World);
+        }
+
+        void Update()
+        {
+            if (!isMove)
             {
                 return;
             }
 
-            target = results.OrderBy(hit => (hit.transform.position - transform.position).sqrMagnitude).First().gameObject;
+            switch (data.moveType)
+            {
+                case MoveType.Trace:
+                    Trace();
+                    break;
+                case MoveType.Reflect:
+                    Reflect();
+                    break;
+            }
         }
 
         void OnDestroy()
@@ -109,6 +112,30 @@ namespace Magic
             {
                 Destroy(pivot);
             }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (data.moveType != MoveType.Reflect)
+            {
+                return;
+            }
+
+            if (!other.gameObject.TryGetComponent(out Enemy.Enemy enemy))
+            {
+                return;
+            }
+            transform.up = Vector2.Reflect(transform.up, transform.position - enemy.transform.position);
+        }
+
+        void GetTraceTarget()
+        {
+            var targetList = Player.Instance.GetAllTarget();
+            if (targetList.Count == 0)
+            {
+                return;
+            }
+            target = targetList.OrderBy(target => (target.transform.position - transform.position).sqrMagnitude).FirstOrDefault();
         }
     }
 }

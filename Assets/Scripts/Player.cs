@@ -1,18 +1,18 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
     private readonly float speed = 5;
-    private readonly float range = 10;
     private bool isMove = false;
     private Vector2 inputDirect = Vector2.zero;
     public Vector2 faceDirect = Vector2.up;
     public Animator animator;
 
-    private readonly Collider2D[] enemyResults = new Collider2D[10];
+    private List<GameObject> targetList = new List<GameObject>();
     private GameObject target;
     public Transform playerBody;
 
@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        InvokeRepeating(nameof(UpdateTarget), 1, 1f);
+    }
+
     void Update()
     {
         if (isMove)
@@ -36,10 +41,6 @@ public class Player : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
         }
 
-        if (target == null)
-        {
-            GetTarget();
-        }
         if (target != null)
         {
             faceDirect = (target.transform.position - transform.position).normalized;
@@ -70,18 +71,51 @@ public class Player : MonoBehaviour
         animator.SetBool("isMove", isMove);
     }
 
-    void GetTarget()
+    public GameObject GetNearestTarget()
     {
-        float minDistance = float.MaxValue;
-        int numFound = Physics2D.OverlapCircleNonAlloc(transform.position, range, enemyResults, LayerMask.GetMask("Enemy"));
+        targetList.RemoveAll(x => x == null);
+        return targetList.FirstOrDefault();
+    }
+
+    public GameObject GetRandomTarget()
+    {
+        targetList.RemoveAll(x => x == null);
+        if (targetList.Count == 0)
+        {
+            return null;
+        }
+        return targetList[Random.Range(0, targetList.Count)];
+    }
+
+    public List<GameObject> GetAllTarget()
+    {
+        targetList.RemoveAll(x => x == null);
+        return targetList;
+    }
+
+    void UpdateTarget()
+    {
+        Collider2D[] results = new Collider2D[10];
+        int numFound = Physics2D.OverlapCircleNonAlloc(transform.position, 10, results, LayerMask.GetMask("Enemy"));
+        if (numFound == 0)
+        {
+            targetList.Clear();
+            target = null;
+            return;
+        }
+
+        float distance;
+        Dictionary<float, GameObject> dic = new();
         for (int i = 0; i < numFound; i++)
         {
-            float distance = (enemyResults[i].transform.position - transform.position).sqrMagnitude;
-            if (distance < minDistance)
+            if (results[i].gameObject == null)
             {
-                minDistance = distance;
-                target = enemyResults[i].gameObject;
+                continue;
             }
+            distance = (results[i].transform.position - transform.position).sqrMagnitude;
+            dic.Add(distance, results[i].gameObject);
         }
+        targetList = dic.OrderBy(x => x.Key).Select(x => x.Value).ToList();
+        target = targetList.FirstOrDefault();
     }
 }

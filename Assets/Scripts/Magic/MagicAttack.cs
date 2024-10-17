@@ -36,6 +36,7 @@ namespace Magic
             if (data.attackType != AttackType.Penetrate)
             {
                 Destroy(gameObject);
+                return;
             }
         }
 

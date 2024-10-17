@@ -9,6 +9,8 @@ namespace Magic
         Spread,      // 散射
         Casual,      // 乱射
         Fall,        // 坠落
+        Fan,         // 扇形
+        Lock,        // 锁定
     }
 
     public enum MoveType
@@ -19,7 +21,9 @@ namespace Magic
         Trace,       // 追踪
         Stay,        // 停留
         Arc,         // 弧线
+        Reflect,     // 折射
         /*Follow,
+        Spin,
         Parabola,
         Bezier,
         Sine,

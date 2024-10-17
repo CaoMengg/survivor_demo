@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Magic
@@ -6,10 +7,12 @@ namespace Magic
     {
         public LineRenderer line;
         public Transform end;
-        public PolygonCollider2D collid;
+        public EdgeCollider2D collid;
+        private MagicData data;
 
         void Start()
         {
+            data = end.GetComponent<Magic>().data;
             transform.SetParent(MagicCtrl.Instance.bulletPool.transform);
             transform.position = Vector3.zero;
             line.SetPosition(0, Vector2.zero);
@@ -24,19 +27,16 @@ namespace Magic
                 return;
             }
 
-            if (transform.position == Vector3.zero && end.position != Vector3.zero)
+            if (line.GetPosition(0) == Vector3.zero && end.position != Vector3.zero)
             {
-                transform.position = end.position;
+                line.SetPosition(0, end.position);
             }
 
-            transform.up = (end.position - transform.position).normalized;
-            var distance = (end.position - transform.position).magnitude;
-            line.SetPosition(1, new Vector2(0, distance));
+            line.SetPosition(line.positionCount - 1, end.position);
 
-            var path = collid.GetPath(0);
-            path[2].y = distance;
-            path[3].y = distance;
-            collid.SetPath(0, path);
+            Vector3[] positions = new Vector3[line.positionCount];
+            line.GetPositions(positions);
+            collid.points = positions.Select(p => (Vector2)p).ToArray();
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -45,13 +45,21 @@ namespace Magic
             {
                 return;
             }
+            end.SendMessage("OnTriggerEnter2D", other, SendMessageOptions.DontRequireReceiver);
 
-            end.TryGetComponent(out MagicAttack magicAttack);
-            if (magicAttack == null)
+            if (data.moveType == MoveType.Reflect && line.positionCount < 5)
+            {
+                line.positionCount++;
+            }
+        }
+
+        void OnTriggerStay2D(Collider2D other)
+        {
+            if (end == null)
             {
                 return;
             }
-            magicAttack.OnTriggerEnter2D(other);
+            end.SendMessage("OnTriggerStay2D", other, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

@@ -24,6 +24,12 @@ namespace Magic
                 case ShootType.Fall:
                     Fall();
                     break;
+                case ShootType.Fan:
+                    Fan();
+                    break;
+                case ShootType.Lock:
+                    Lock();
+                    break;
                 default:
                     Dartle();
                     break;
@@ -54,6 +60,26 @@ namespace Magic
         {
             transform.up = Player.Instance.faceDirect;
             transform.position = Player.Instance.transform.position + (Vector3)Random.insideUnitCircle * 10;
+        }
+
+        void Fan()
+        {
+            float maxAngle = data.castNum * 20 < 120 ? data.castNum * 20 : 120;
+            float angle = Mathf.Lerp(0f, maxAngle, (float)castSeq / (float)data.castNum);
+            transform.up = Quaternion.Euler(0, 0, angle) * Player.Instance.faceDirect;
+            transform.position = Player.Instance.transform.position + transform.up * 5;
+        }
+
+        void Lock()
+        {
+            GameObject target = Player.Instance.GetRandomTarget();
+            if (target == null)
+            {
+                Casual();
+                return;
+            }
+            transform.position = target.transform.position;
+            transform.up = (transform.position - Player.Instance.transform.position).normalized;
         }
     }
 }
