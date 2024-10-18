@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be155ca3e14ff412680de93dfc644b6e, type: 3}
-  m_Name: Around
+  m_Name: Lock
   m_EditorClassIdentifier: 
   <evolId>k__BackingField: 0
-  <evolName>k__BackingField: "\u73AF\u7ED5"
-  <evolDesc>k__BackingField: "\u8F68\u8FF9-\u73AF\u7ED5"
-  <evolIcon>k__BackingField: {fileID: 21300000, guid: ef147e2665db3394ab8f3c2ade98cbf5, type: 3}
-  shootType: 0
-  moveType: 2
+  <evolName>k__BackingField: "\u9501\u5B9A"
+  <evolDesc>k__BackingField: "\u5C04\u51FB-\u9501\u5B9A"
+  <evolIcon>k__BackingField: {fileID: 21300000, guid: 19e5ba7d75c4f2e4e8d2151606339bf3, type: 3}
+  shootType: 6
+  moveType: 0
   castNum: 0

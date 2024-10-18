@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  <magicId>k__BackingField: 5
-  <magicName>k__BackingField: Sword
-  <magicDesc>k__BackingField: Sword\nSpread Arc
+  <magicId>k__BackingField: 0
+  <magicName>k__BackingField: "\u5927\u5251"
+  <magicDesc>k__BackingField: "\u5927\u5251\\n\u9501\u5B9A \u5F27\u5F62"
   <magicIcon>k__BackingField: {fileID: 21300000, guid: 5aa0d71d789c93a468898d8acfcf2a09, type: 3}
   <magicPrefab>k__BackingField: {fileID: 7340669257976382604, guid: f3ed9f4e40834449793ac4ed3bfaea03, type: 3}
-  shootType: 2
+  shootType: 6
   moveType: 5
   attackType: 1
   coolDown: 3
   duration: 1
   castNum: 2
   speed: 15
-  damage: 5
+  damage: 8
   curCoolDown: 0

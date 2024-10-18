@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  <magicId>k__BackingField: 1
-  <magicName>k__BackingField: Fire Ball
-  <magicDesc>k__BackingField: Fire Ball\nCasual Line
+  <magicId>k__BackingField: 0
+  <magicName>k__BackingField: "\u706B\u7403"
+  <magicDesc>k__BackingField: "\u706B\u7403\\n\u6247\u5F62 \u76F4\u7EBF"
   <magicIcon>k__BackingField: {fileID: 21300000, guid: e32b8056f5f2eb741bec42f791c7f1b5, type: 3}
   <magicPrefab>k__BackingField: {fileID: 6958529008595113955, guid: 6b8a87544eb2d4924b743fcdb129bae4, type: 3}
-  shootType: 3
+  shootType: 5
   moveType: 1
   attackType: 1
-  coolDown: 1
+  coolDown: 2
   duration: 5
   castNum: 3
   speed: 6

@@ -47,7 +47,7 @@ namespace Magic
             }
             end.SendMessage("OnTriggerEnter2D", other, SendMessageOptions.DontRequireReceiver);
 
-            if (data.moveType == MoveType.Reflect && line.positionCount < 5)
+            if (data.moveType == MoveType.Reflect && line.positionCount < 8)
             {
                 line.positionCount++;
             }

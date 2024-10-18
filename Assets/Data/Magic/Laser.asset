@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   <magicId>k__BackingField: 0
-  <magicName>k__BackingField: Laser
-  <magicDesc>k__BackingField: Laser\nSpread Line
+  <magicName>k__BackingField: "\u6FC0\u5149"
+  <magicDesc>k__BackingField: "\u6FC0\u5149\\n\u6563\u5C04 \u6298\u5C04"
   <magicIcon>k__BackingField: {fileID: 21300000, guid: ed8ef41e0593c444f89985400bb18768, type: 3}
   <magicPrefab>k__BackingField: {fileID: 2941757530948711763, guid: 829d8753a4527459e875138326278b62, type: 3}
   shootType: 2
-  moveType: 1
-  attackType: 1
+  moveType: 6
+  attackType: 2
   coolDown: 4
   duration: 4
-  castNum: 2
-  speed: 8
-  damage: 8
+  castNum: 3
+  speed: 12
+  damage: 2
   curCoolDown: 0

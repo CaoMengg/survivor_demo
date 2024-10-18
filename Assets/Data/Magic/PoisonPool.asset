@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PoisonPool
   m_EditorClassIdentifier: 
   <magicId>k__BackingField: 4
-  <magicName>k__BackingField: Poison Pool
-  <magicDesc>k__BackingField: Poison Pool\nFall Stay
+  <magicName>k__BackingField: "\u6BD2\u6C60"
+  <magicDesc>k__BackingField: "\u6BD2\u6C60\\n\u6563\u843D \u56FA\u5B9A"
   <magicIcon>k__BackingField: {fileID: 21300000, guid: f816f63babfcb3e4d92c5cd9bb193149, type: 3}
   <magicPrefab>k__BackingField: {fileID: 7864842267143950241, guid: b4acf70f5cb5f4b1b88f0596e8aac4f2, type: 3}
   shootType: 4

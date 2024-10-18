@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eca225831b64bdf91d678b245d359e, type: 3}
   m_Name: WaterBall
   m_EditorClassIdentifier: 
-  <magicId>k__BackingField: 2
-  <magicName>k__BackingField: Water Ball
-  <magicDesc>k__BackingField: Water Ball\nSpread Around
+  <magicId>k__BackingField: 0
+  <magicName>k__BackingField: "\u6C34\u7403"
+  <magicDesc>k__BackingField: "\u6C34\u7403\\n\u6563\u5C04 \u73AF\u7ED5"
   <magicIcon>k__BackingField: {fileID: 21300000, guid: 6f649aea2852e3b46a8c4386355a2c53, type: 3}
   <magicPrefab>k__BackingField: {fileID: 2748177045849229936, guid: 79204d18bd0194fbf9fa8f5a337c27a6, type: 3}
   shootType: 2

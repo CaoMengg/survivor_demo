@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private List<GameObject> targetList = new List<GameObject>();
     private GameObject target;
     public Transform playerBody;
+    public Transform indicator;
 
     void Awake()
     {
@@ -44,8 +45,8 @@ public class Player : MonoBehaviour
         if (target != null)
         {
             faceDirect = (target.transform.position - transform.position).normalized;
-            //transform.up = faceDirect;
         }
+        indicator.up = faceDirect;
     }
 
     void OnMove(InputValue input)
@@ -95,7 +96,7 @@ public class Player : MonoBehaviour
 
     void UpdateTarget()
     {
-        Collider2D[] results = new Collider2D[10];
+        Collider2D[] results = new Collider2D[20];
         int numFound = Physics2D.OverlapCircleNonAlloc(transform.position, 10, results, LayerMask.GetMask("Enemy"));
         if (numFound == 0)
         {

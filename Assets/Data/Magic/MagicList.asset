@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MagicList
   m_EditorClassIdentifier: 
   magicList:
-  - {fileID: 11400000, guid: 9e0274f940cef46ba973e0b6c5aaeb41, type: 2}
   - {fileID: 11400000, guid: c9e5966b4f6c74618bb9229b38a2e577, type: 2}
-  - {fileID: 11400000, guid: 4f7d7ac1f8cca4a3095efb9ca3e64fab, type: 2}
+  - {fileID: 11400000, guid: 9e0274f940cef46ba973e0b6c5aaeb41, type: 2}
   - {fileID: 11400000, guid: 194b88e9f2d0b4d6b9cf4712105cbf15, type: 2}
   - {fileID: 11400000, guid: c995da5fdf94143068a0f9aa3bd540d7, type: 2}
+  - {fileID: 11400000, guid: f900af1f5e34047eeb1a91916c87e232, type: 2}
+  - {fileID: 11400000, guid: 4f7d7ac1f8cca4a3095efb9ca3e64fab, type: 2}
